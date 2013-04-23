@@ -156,6 +156,10 @@
                              (format "Unknown error, %s is neither file nor dir."
                                      target-path))))]
     (if (.exists remote-fs remote-path)
-      (copy remote-fs remote-path target-path buffer throttle)
+      (try
+        (copy remote-fs remote-path target-path buffer throttle)
+        (catch Exception e
+          (throw (IOException.
+                  (format "Error copying %s to %s: %s" remote-path target-path e)))))
       (throw (FileNotFoundException.
               (str "Couldn't find remote path: " remote-path))))))

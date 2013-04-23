@@ -1,8 +1,8 @@
-(defproject hadoop-util "0.2.9"
+(defproject hadoop-util "0.3.0-SNAPSHOT"
   :description "Hadoop utilities that we've found useful."
   :min-lein-version "2.0.0"
-  :dependencies [[org.clojure/clojure "1.4.0"]]
+  :dependencies [[org.clojure/clojure "1.5.1"]]
   :profiles {:dev
              {:dependencies
-              [[org.apache.hadoop/hadoop-core "0.20.2-dev"]
-               [midje "1.4.0"]]}})
+              [[org.apache.hadoop/hadoop-core "0.20.2"]
+               [midje "1.5.0"]]}})

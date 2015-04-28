@@ -108,7 +108,6 @@
                os (BufferedOutputStream. (FileOutputStream. local-path))]
      (loop [sleep-ms (sleep-interval throttle)]
        (when (pos? sleep-ms)
-         (prn "Sleep: " sleep-ms)
          (Thread/sleep sleep-ms))
        (let [amt (.read is buffer)]
          (when (pos? amt)
